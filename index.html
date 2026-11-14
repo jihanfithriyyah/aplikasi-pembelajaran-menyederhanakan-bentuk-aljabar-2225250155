@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petualangan Aljabar – Game Literasi Matematika</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- LAYAR 1: PEMBUKA -->
+    <section id="screen-start" class="screen active">
+      <div class="badge">Kelas VIII · Bentuk Aljabar</div>
+      <h1>Petualangan Aljabar</h1>
+      <p class="lead">Selesaikan 4 misi. Setiap misi punya 6 langkah. Pilih langkah yang benar untuk mengumpulkan bintang ⭐</p>
+
+      <div class="missions-preview">
+        <div><span>1</span> Bernalar matematis</div>
+        <div><span>2</span> Merumuskan situasi</div>
+        <div><span>3</span> Menerapkan konsep</div>
+        <div><span>4</span> Menafsirkan &amp; mengevaluasi</div>
+      </div>
+
+      <label for="player-name">Nama kamu</label>
+      <input id="player-name" type="text" placeholder="Tulis namamu di sini" maxlength="30">
+      <button id="btn-start" class="btn primary">Mulai Petualangan ▶</button>
+    </section>
+
+    <!-- LAYAR 2: PERMAINAN -->
+    <section id="screen-game" class="screen">
+      <header class="topbar">
+        <div id="mission-label" class="mission-label">Misi 1 dari 4</div>
+        <div class="stars">⭐ <span id="score">0</span> / 24</div>
+      </header>
+
+      <div class="progress"><div id="progress-bar"></div></div>
+
+      <article class="problem">
+        <h2 id="mission-title"></h2>
+        <div id="problem-text"></div>
+      </article>
+
+      <div class="steps-dots" id="steps-dots"></div>
+
+      <article class="question">
+        <p class="step-label" id="step-label"></p>
+        <p id="question-text" class="question-text"></p>
+        <div id="options" class="options"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <button id="btn-next" class="btn primary hidden">Lanjut ▶</button>
+      </article>
+    </section>
+
+    <!-- LAYAR 3: HASIL -->
+    <section id="screen-result" class="screen">
+      <h1>Petualangan Selesai! 🎉</h1>
+      <p class="lead" id="result-greeting"></p>
+      <div class="total">
+        <div class="total-number"><span id="final-score">0</span><small>/24</small></div>
+        <div id="final-grade" class="grade"></div>
+      </div>
+      <h3>Skor per indikator</h3>
+      <div id="indicator-list" class="indicator-list"></div>
+      <button id="btn-restart" class="btn primary">Main Lagi ↻</button>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
